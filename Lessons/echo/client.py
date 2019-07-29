@@ -1,6 +1,11 @@
+from json import JSONDecodeError
+
 import yaml
 import socket
 from argparse import ArgumentParser
+
+from echo.client_protocol import ClientProtocol
+from echo.server_protocol import ServerProtocol
 
 parser = ArgumentParser()
 
@@ -26,12 +31,21 @@ try:
     sock.connect((host, port))
     print('Client was started')
 
-    data = input('Enter data: ')
-    sock.send(data.encode())
-    print(f'Client send data {data}')
+    data = ClientProtocol()
+    data.message = input('Enter data: ')
+    sock.send(str(data).encode())
 
-    b_response = sock.recv(config.get('buffersize'))
+    print(f'Client send data "{data}"')
 
-    print(f'Server send data {b_response.decode()}')
+    response = sock.recv(config.get('buffersize')).decode();
+    try:
+        b_response = ClientProtocol()
+        b_response.parse(response)
+        print(f'Server send data "{b_response}"')
+    except Exception:
+        b_response = ServerProtocol()
+        b_response.parse(response)
+        print(f'Server send data "{b_response}"')
+
 except KeyboardInterrupt:
     print('client shutdown.')
