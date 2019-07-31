@@ -36,17 +36,20 @@ try:
     while True:
         client, address = sock.accept()
         print(f'Client was detected {address[0]}:{address[1]}')
-
+        # Получили данные запроса.
         b_request = client.recv(config.get('buffersize'))
-
         request = json.loads(b_request.decode())
-
+        # Если данные правильные.
         if validate_request(request):
+            # Получили наименование действия.
             actions_name = request.get('action')
+            # Получили реализацию контроллера по акшину.
             controller = resolve(actions_name)
+            # Если контроллер таки нашли.
             if controller:
                 try:
                     print(f'Client send valid request {request}')
+                    # Сформировали данные ответа сервера.
                     response = controller(request)
                 except Exception as err:
                     print(f'Internal server error: {err}')
@@ -57,7 +60,7 @@ try:
         else:
             print(f'Client send invalid request {request}')
             response = make_response(request, 404, 'Wrong request')
-
+        # Вернули результат клиенту.
         str_response = json.dumps(response)
         client.send(str_response.encode())
 
