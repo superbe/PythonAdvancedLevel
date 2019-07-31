@@ -44,6 +44,7 @@ try:
             # Получили наименование действия.
             actions_name = request.get('action')
             # Получили реализацию контроллера по акшину.
+            # actions_name - название действия.
             controller = resolve(actions_name)
             # Если контроллер таки нашли.
             if controller:
