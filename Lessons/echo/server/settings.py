@@ -1,5 +1,5 @@
 # Установленные модули.
-INSTALLED_APPS=[
+INSTALLED_APPS = [
     'echo',
     'messanger'
 ]
