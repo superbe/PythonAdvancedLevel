@@ -17,23 +17,22 @@ def out_entity(value):
     """
     Вывести сведения о текущей сущности.
     :param value: сущность.
-    :return: void.
+    :return: сформированная строка.
     """
-    print(value)
-    print(type(value))
-    print(len(value))
+    return f'{value}\n{type(value)}\n{len(value)}\n'
 
 
-def converter(value):
+def converter(value, mode=False):
     """
-    Конвертировать строку в байты, а затем обратно в строку.
+    Конвертировать строку в байты или байты в строку.
     :param value: вводимая строка.
-    :return: void.
+    :param mode: режим конвертирования (s - декодирование, в противном случае кодирование).
+    :return: конвертированное значение.
     """
-    value = str(value).encode('utf-8')
-    out_entity(value)
-    value = value.decode('utf-8')
-    out_entity(value)
+    if mode:
+        return value.decode('utf-8')
+    else:
+        return str(value).encode('utf-8')
 
 
 def ping(value):
@@ -52,12 +51,12 @@ def ping(value):
 """
 
 print('Задание 1\n')
-out_entity('разработка')
-out_entity('сокет')
-out_entity('декоратор')
-out_entity('\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430')
-out_entity('\u0441\u043e\u043a\u0435\u0442')
-out_entity('\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440')
+print(out_entity('разработка'))
+print(out_entity('сокет'))
+print(out_entity('декоратор'))
+print(out_entity('\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430'))
+print(out_entity('\u0441\u043e\u043a\u0435\u0442'))
+print(out_entity('\u0434\u0435\u043a\u043e\u0440\u0430\u0442\u043e\u0440'))
 print()
 
 """
@@ -67,9 +66,9 @@ print()
 """
 
 print('Задание 2\n')
-out_entity(b'class')
-out_entity(b'function')
-out_entity(b'method')
+print(out_entity(b'class'))
+print(out_entity(b'function'))
+print(out_entity(b'method'))
 print()
 
 """
@@ -95,10 +94,14 @@ print()
 """
 
 print('Задание 4\n')
-converter('разработка')
-converter('администрирование')
-converter('protocol')
-converter('standard')
+print(out_entity(converter('разработка')))
+print(out_entity(converter(converter('разработка'), True)))
+print(out_entity(converter('администрирование')))
+print(out_entity(converter(converter('администрирование'), True)))
+print(out_entity(converter('protocol')))
+print(out_entity(converter(b'protocol', True)))
+print(out_entity(converter('standard')))
+print(out_entity(converter(b'standard', True)))
 print()
 
 """
