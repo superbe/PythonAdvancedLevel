@@ -31,3 +31,6 @@
 2019-08-04 04:55:36,215 - INFO - Client was started
 2019-08-04 04:55:45,312 - INFO - Client send data "Test"
 2019-08-04 04:55:45,319 - INFO - Server send data "{"action": "echo", "time": 1564876545.318526, "code": 200, "data": "Test"}"
+2019-08-04 04:58:45,427 - INFO - Client was started
+2019-08-04 04:58:59,561 - INFO - Client send data "Test"
+2019-08-04 04:58:59,570 - INFO - Server send data "{"action": "echo", "time": 1564876739.570163, "code": 200, "data": "Test"}"

@@ -113,3 +113,11 @@
 2019-08-04 04:55:45,318 - INFO - Client send valid request {'action': 'echo', 'time': 1564876545.312523, 'data': 'Test'}
 2019-08-04 04:55:45,318 - DEBUG - get_echo: {'action': 'echo', 'time': 1564876545.312523, 'data': 'Test'}
 2019-08-04 04:55:45,318 - DEBUG - make_response вызвана из функции main
+2019-08-04 04:58:39,048 - INFO - Server started with localhost:8000
+2019-08-04 04:58:45,431 - INFO - Client was detected 127.0.0.1:53176
+2019-08-04 04:58:59,561 - DEBUG - validate_request вызвана из функции main
+2019-08-04 04:58:59,569 - DEBUG - get_server_actions вызвана из функции main
+2019-08-04 04:58:59,569 - DEBUG - resolve вызвана из функции main
+2019-08-04 04:58:59,569 - INFO - Client send valid request {'action': 'echo', 'time': 1564876739.561157, 'data': 'Test'}
+2019-08-04 04:58:59,569 - DEBUG - get_echo: {'action': 'echo', 'time': 1564876739.561157, 'data': 'Test'}
+2019-08-04 04:58:59,570 - DEBUG - make_response вызвана из функции main
