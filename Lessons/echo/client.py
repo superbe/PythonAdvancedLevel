@@ -1,12 +1,10 @@
-from json import JSONDecodeError
-
 import yaml
 import socket
 import json
+import logging
+import client_log_config
 from argparse import ArgumentParser
 from datetime import datetime
-from echo.client_protocol import ClientProtocol
-from echo.server_protocol import ServerProtocol
 
 parser = ArgumentParser()
 
@@ -28,9 +26,9 @@ if args.config:
 host, port = config.get('host'), config.get('port')
 
 try:
+    logging.info('Client was started')
     sock = socket.socket()
     sock.connect((host, port))
-    print('Client was started')
 
     action = input('Enter action: ')
     data = input('Enter data: ')
@@ -44,9 +42,9 @@ try:
     str_request = json.dumps(request)
 
     sock.send(str_request.encode())
-    print(f'Client send data "{data}"')
+    logging.info(f'Client send data "{data}"')
 
     b_response = sock.recv(config.get('buffersize')).decode();
-    print(f'Server send data "{b_response}"')
+    logging.info(f'Server send data "{b_response}"')
 except KeyboardInterrupt:
-    print('client shutdown.')
+    logging.critical('client shutdown.')

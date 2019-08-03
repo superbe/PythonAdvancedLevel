@@ -1,7 +1,10 @@
 from functools import reduce
 from settings import INSTALLED_APPS
 
+from decorators import logged_def
 
+
+@logged_def
 def get_server_actions():
     modules = reduce(
         lambda value, item: value + [__import__(f'{item}.actions')],
@@ -20,6 +23,7 @@ def get_server_actions():
     )
 
 
+@logged_def
 def resolve(action_name, actions=None):
     action_list = actions or get_server_actions()
     action_mapping = {

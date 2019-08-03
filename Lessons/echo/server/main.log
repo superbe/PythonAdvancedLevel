@@ -1,0 +1,92 @@
+2019-08-03 18:39:44,498 - INFO - Server started with localhost:8000
+2019-08-03 18:39:51,764 - INFO - Client was detected 127.0.0.1:55114
+2019-08-03 18:40:02,458 - INFO - Client send valid request {'action': 'echo', 'time': 1564839602.452046, 'data': 'Test test test'}
+2019-08-03 21:48:22,848 - INFO - Server started with localhost:8000
+2019-08-03 21:49:32,475 - INFO - Server started with localhost:8000
+2019-08-03 21:49:42,213 - INFO - Server started with localhost:8000
+2019-08-03 21:49:47,603 - INFO - Client was detected 127.0.0.1:56543
+2019-08-03 21:51:07,786 - INFO - Server started with localhost:8000
+2019-08-03 21:51:13,754 - INFO - Client was detected 127.0.0.1:56549
+2019-08-03 21:52:30,802 - INFO - Server started with localhost:8000
+2019-08-03 21:52:45,364 - INFO - Client was detected 127.0.0.1:56556
+2019-08-03 22:30:57,115 - INFO - Server started with localhost:8000
+2019-08-03 22:31:06,867 - INFO - Client was detected 127.0.0.1:50632
+2019-08-03 22:32:57,084 - INFO - Server started with localhost:8000
+2019-08-03 22:33:04,146 - INFO - Client was detected 127.0.0.1:50649
+2019-08-03 22:33:10,675 - INFO - Client send valid request {'action': 'echo', 'time': 1564853590.64, 'data': 'Test'}
+2019-08-03 22:33:10,675 - DEBUG - get_echo: {'action': 'echo', 'time': 1564853590.64, 'data': 'Test'}
+2019-08-03 22:33:10,675 - CRITICAL - Internal server error: get_echo() argument after ** must be a mapping, not tuple
+2019-08-03 22:37:50,593 - INFO - Client was detected 127.0.0.1:50670
+2019-08-03 22:37:57,478 - INFO - Client send valid request {'action': 'echo', 'time': 1564853877.478873, 'data': 'Test'}
+2019-08-03 22:37:57,478 - DEBUG - get_echo: {'action': 'echo', 'time': 1564853877.478873, 'data': 'Test'}
+2019-08-03 22:37:57,478 - CRITICAL - Internal server error: get_echo() argument after ** must be a mapping, not tuple
+2019-08-03 23:06:48,197 - INFO - Server started with localhost:8000
+2019-08-03 23:06:55,845 - INFO - Client was detected 127.0.0.1:50875
+2019-08-03 23:07:04,561 - INFO - Client send valid request {'action': 'echo', 'time': 1564855624.546005, 'data': 'Test'}
+2019-08-03 23:07:04,561 - DEBUG - get_echo: {'action': 'echo', 'time': 1564855624.546005, 'data': 'Test'}
+2019-08-03 23:17:24,876 - INFO - Server started with localhost:8000
+2019-08-03 23:17:33,495 - INFO - Client was detected 127.0.0.1:51072
+2019-08-03 23:17:40,541 - INFO - Client send valid request {'action': 'echo', 'time': 1564856260.541411, 'data': 'Test'}
+2019-08-03 23:17:40,541 - DEBUG - get_echo: {'action': 'echo', 'time': 1564856260.541411, 'data': 'Test'}
+2019-08-03 23:19:52,303 - INFO - __main__ - Server started with localhost:8000
+2019-08-03 23:19:57,903 - INFO - __main__ - Client was detected 127.0.0.1:51108
+2019-08-03 23:20:07,760 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564856407.760356, 'data': 'Test'}
+2019-08-03 23:20:07,760 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564856407.760356, 'data': 'Test'}
+2019-08-03 23:32:16,200 - INFO - __main__ - Server started with localhost:8000
+2019-08-03 23:32:48,013 - INFO - __main__ - Server started with localhost:8000
+2019-08-03 23:32:54,807 - INFO - __main__ - Client was detected 127.0.0.1:51439
+2019-08-03 23:33:02,352 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564857182.348503, 'data': 'Test'}
+2019-08-03 23:33:02,352 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564857182.348503, 'data': 'Test'}
+2019-08-04 00:21:01,320 - INFO - __main__ - Server started with localhost:8000
+2019-08-04 00:22:58,136 - INFO - __main__ - Client was detected 127.0.0.1:50357
+2019-08-04 00:23:09,055 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564860189.044042, 'data': 'Test'}
+2019-08-04 00:23:09,055 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564860189.044042, 'data': 'Test'}
+2019-08-04 00:28:30,058 - INFO - __main__ - Server started with localhost:8000
+2019-08-04 00:28:36,096 - INFO - __main__ - Client was detected 127.0.0.1:50732
+2019-08-04 00:28:44,737 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564860524.731007, 'data': 'Test'}
+2019-08-04 00:28:44,737 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564860524.731007, 'data': 'Test'}
+2019-08-04 04:13:07,721 - INFO - __main__ - Server started with localhost:8000
+2019-08-04 04:13:24,038 - INFO - __main__ - Client was detected 127.0.0.1:52871
+2019-08-04 04:14:11,267 - DEBUG - decorators - validate_request: {'action': 'evho', 'time': 1564874051.266144, 'data': 'Test'}
+2019-08-04 04:14:11,267 - DEBUG - decorators - resolve: evho
+2019-08-04 04:17:48,586 - INFO - __main__ - Server started with localhost:8000
+2019-08-04 04:18:19,501 - INFO - __main__ - Client was detected 127.0.0.1:52888
+2019-08-04 04:18:29,378 - DEBUG - decorators - validate_request: {'action': 'echo', 'time': 1564874309.37775, 'data': 'Test'}
+2019-08-04 04:18:29,389 - DEBUG - decorators - get_server_actions: [{'action': 'echo', 'controller': <function logged.<locals>.wrapper at 0x0000000568E6E7B8>}, {'action': 'send', 'controller': <function logged.<locals>.wrapper at 0x0000000568E6E950>}]
+2019-08-04 04:18:29,389 - DEBUG - decorators - resolve: <function logged.<locals>.wrapper at 0x0000000568E6E7B8>
+2019-08-04 04:18:29,389 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564874309.37775, 'data': 'Test'}
+2019-08-04 04:18:29,389 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564874309.37775, 'data': 'Test'}
+2019-08-04 04:18:29,390 - DEBUG - decorators - make_response: {'action': 'echo', 'time': 1564874309.37775, 'data': 'Test'}
+2019-08-04 04:21:12,180 - INFO - __main__ - Server started with localhost:8000
+2019-08-04 04:21:17,714 - INFO - __main__ - Client was detected 127.0.0.1:52903
+2019-08-04 04:21:27,402 - DEBUG - decorators - validate_request: {'action': 'echo', 'time': 1564874487.40229, 'data': 'Test'}
+2019-08-04 04:21:27,408 - DEBUG - decorators - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x0000003D30D65840>}, {'action': 'send', 'controller': <function send_message at 0x0000003D30D659D8>}]
+2019-08-04 04:21:27,408 - DEBUG - decorators - resolve: <function get_echo at 0x0000003D30D65840>
+2019-08-04 04:21:27,408 - INFO - __main__ - Client send valid request {'action': 'echo', 'time': 1564874487.40229, 'data': 'Test'}
+2019-08-04 04:21:27,409 - DEBUG - decorators - get_echo: {'action': 'echo', 'time': 1564874487.40229, 'data': 'Test'}
+2019-08-04 04:21:27,409 - DEBUG - decorators - make_response: {'action': 'echo', 'time': 1564874487.40229, 'data': 'Test'}
+2019-08-04 04:23:15,299 - INFO - Server started with localhost:8000
+2019-08-04 04:23:20,536 - INFO - Client was detected 127.0.0.1:52910
+2019-08-04 04:23:28,625 - DEBUG - validate_request: {'action': 'echo', 'time': 1564874608.625849, 'data': 'Test'}
+2019-08-04 04:23:28,632 - DEBUG - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x0000000FB4A74840>}, {'action': 'send', 'controller': <function send_message at 0x0000000FB4A749D8>}]
+2019-08-04 04:23:28,632 - DEBUG - resolve: <function get_echo at 0x0000000FB4A74840>
+2019-08-04 04:23:28,632 - INFO - Client send valid request {'action': 'echo', 'time': 1564874608.625849, 'data': 'Test'}
+2019-08-04 04:23:28,632 - DEBUG - get_echo: {'action': 'echo', 'time': 1564874608.625849, 'data': 'Test'}
+2019-08-04 04:23:28,632 - DEBUG - make_response: {'action': 'echo', 'time': 1564874608.625849, 'data': 'Test'}
+2019-08-04 04:25:15,314 - INFO - Client was detected 127.0.0.1:52925
+2019-08-04 04:26:35,067 - INFO - Server started with localhost:8000
+2019-08-04 04:26:41,190 - INFO - Client was detected 127.0.0.1:52933
+2019-08-04 04:26:48,490 - DEBUG - validate_request: {'action': 'echo', 'time': 1564874808.489177, 'data': 'Test'}
+2019-08-04 04:26:48,496 - DEBUG - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x000000F8DC8D5840>}, {'action': 'send', 'controller': <function send_message at 0x000000F8DC8D59D8>}]
+2019-08-04 04:26:48,497 - DEBUG - resolve: <function get_echo at 0x000000F8DC8D5840>
+2019-08-04 04:26:48,497 - INFO - Client send valid request {'action': 'echo', 'time': 1564874808.489177, 'data': 'Test'}
+2019-08-04 04:26:48,497 - DEBUG - get_echo: {'action': 'echo', 'time': 1564874808.489177, 'data': 'Test'}
+2019-08-04 04:26:48,497 - DEBUG - make_response: {'action': 'echo', 'time': 1564874808.489177, 'data': 'Test'}
+2019-08-04 04:27:45,235 - INFO - Server started with localhost:8000
+2019-08-04 04:27:52,947 - INFO - Client was detected 127.0.0.1:52938
+2019-08-04 04:28:00,873 - DEBUG - validate_request: {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
+2019-08-04 04:28:00,881 - DEBUG - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x000000DE6C676840>}, {'action': 'send', 'controller': <function send_message at 0x000000DE6C6769D8>}]
+2019-08-04 04:28:00,881 - DEBUG - resolve: <function get_echo at 0x000000DE6C676840>
+2019-08-04 04:28:00,881 - INFO - Client send valid request {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
+2019-08-04 04:28:00,881 - DEBUG - get_echo: {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
+2019-08-04 04:28:00,881 - DEBUG - make_response: {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}

@@ -1,0 +1,24 @@
+2019-08-04 00:28:36,096 - INFO - client - Client was started
+2019-08-04 00:28:44,731 - INFO - client - Client send data "Test"
+2019-08-04 00:28:44,737 - INFO - client - Server send data "{"action": "echo", "time": 1564860524.737002, "code": 200, "data": "Test"}"
+2019-08-04 04:13:24,038 - INFO - client - Client was started
+2019-08-04 04:14:11,266 - INFO - client - Client send data "Test"
+2019-08-04 04:14:11,283 - INFO - client - Server send data ""
+2019-08-04 04:18:19,501 - INFO - client - Client was started
+2019-08-04 04:18:29,378 - INFO - client - Client send data "Test"
+2019-08-04 04:18:29,390 - INFO - client - Server send data "{"action": "echo", "time": 1564874309.39076, "code": 200, "data": "Test"}"
+2019-08-04 04:21:17,714 - INFO - client - Client was started
+2019-08-04 04:21:27,402 - INFO - client - Client send data "Test"
+2019-08-04 04:21:27,409 - INFO - client - Server send data "{"action": "echo", "time": 1564874487.409293, "code": 200, "data": "Test"}"
+2019-08-04 04:23:20,535 - INFO - Client was started
+2019-08-04 04:23:28,625 - INFO - Client send data "Test"
+2019-08-04 04:23:28,632 - INFO - Server send data "{"action": "echo", "time": 1564874608.632853, "code": 200, "data": "Test"}"
+2019-08-04 04:25:15,314 - INFO - Client was started
+
+2019-08-04 04:25:54,929 - INFO - Client was started
+2019-08-04 04:26:41,187 - INFO - Client was started
+2019-08-04 04:26:48,490 - INFO - Client send data "Test"
+2019-08-04 04:26:48,497 - INFO - Server send data "{"action": "echo", "time": 1564874808.497163, "code": 200, "data": "Test"}"
+2019-08-04 04:27:52,944 - INFO - Client was started
+2019-08-04 04:28:00,873 - INFO - Client send data "Test"
+2019-08-04 04:28:00,882 - INFO - Server send data "{"action": "echo", "time": 1564874880.881662, "code": 200, "data": "Test"}"
