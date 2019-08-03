@@ -13,11 +13,11 @@ def logged(func):
     return wrapper
 
 
-def logged_def(func):
+def log(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
-        logger.debug(f'{func.__name__}: {result}')
+        logger.debug(f'{func.__name__} вызвана из функции main')
         return result
 
     return wrapper

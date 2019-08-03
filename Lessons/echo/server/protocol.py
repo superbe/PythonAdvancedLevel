@@ -1,16 +1,16 @@
 from datetime import datetime
 
-from decorators import logged
+from decorators import log
 
 
-@logged
+@log
 def validate_request(request):
     if 'action' in request and 'time' in request:
         return True
     return False
 
 
-@logged
+@log
 def make_response(request, code, data=None):
     return {
         'action': request.get('action'),

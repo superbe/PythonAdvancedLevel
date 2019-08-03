@@ -90,3 +90,26 @@
 2019-08-04 04:28:00,881 - INFO - Client send valid request {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
 2019-08-04 04:28:00,881 - DEBUG - get_echo: {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
 2019-08-04 04:28:00,881 - DEBUG - make_response: {'action': 'echo', 'time': 1564874880.873638, 'data': 'Test'}
+2019-08-04 04:51:00,048 - INFO - Server started with localhost:8000
+2019-08-04 04:51:09,100 - INFO - Client was detected 127.0.0.1:53122
+2019-08-04 04:51:25,713 - DEBUG - validate_request: {'action': 'Echo', 'time': 1564876285.713388, 'data': 'Test'}
+2019-08-04 04:51:25,719 - DEBUG - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x0000009258F85950>}, {'action': 'send', 'controller': <function send_message at 0x0000009258F85AE8>}]
+2019-08-04 04:51:25,719 - DEBUG - resolve: None
+2019-08-04 04:51:25,719 - ERROR - Controller with action name Echo does not exists
+2019-08-04 04:51:25,719 - DEBUG - make_response: {'action': 'Echo', 'time': 1564876285.713388, 'data': 'Test'}
+2019-08-04 04:53:48,933 - INFO - Server started with localhost:8000
+2019-08-04 04:53:55,261 - INFO - Client was detected 127.0.0.1:53139
+2019-08-04 04:54:01,921 - DEBUG - validate_request: True
+2019-08-04 04:54:01,927 - DEBUG - get_server_actions: [{'action': 'echo', 'controller': <function get_echo at 0x000000A301BC5840>}, {'action': 'send', 'controller': <function send_message at 0x000000A301BC59D8>}]
+2019-08-04 04:54:01,927 - DEBUG - resolve: <function get_echo at 0x000000A301BC5840>
+2019-08-04 04:54:01,927 - INFO - Client send valid request {'action': 'echo', 'time': 1564876441.920264, 'data': 'Test'}
+2019-08-04 04:54:01,927 - DEBUG - get_echo: {'action': 'echo', 'time': 1564876441.920264, 'data': 'Test'}
+2019-08-04 04:54:01,927 - DEBUG - make_response: {'action': 'echo', 'time': 1564876441.927269, 'code': 200, 'data': 'Test'}
+2019-08-04 04:55:30,866 - INFO - Server started with localhost:8000
+2019-08-04 04:55:36,217 - INFO - Client was detected 127.0.0.1:53157
+2019-08-04 04:55:45,312 - DEBUG - validate_request вызвана из функции main
+2019-08-04 04:55:45,318 - DEBUG - get_server_actions вызвана из функции main
+2019-08-04 04:55:45,318 - DEBUG - resolve вызвана из функции main
+2019-08-04 04:55:45,318 - INFO - Client send valid request {'action': 'echo', 'time': 1564876545.312523, 'data': 'Test'}
+2019-08-04 04:55:45,318 - DEBUG - get_echo: {'action': 'echo', 'time': 1564876545.312523, 'data': 'Test'}
+2019-08-04 04:55:45,318 - DEBUG - make_response вызвана из функции main

@@ -22,3 +22,12 @@
 2019-08-04 04:27:52,944 - INFO - Client was started
 2019-08-04 04:28:00,873 - INFO - Client send data "Test"
 2019-08-04 04:28:00,882 - INFO - Server send data "{"action": "echo", "time": 1564874880.881662, "code": 200, "data": "Test"}"
+2019-08-04 04:51:09,097 - INFO - Client was started
+2019-08-04 04:51:25,713 - INFO - Client send data "Test"
+2019-08-04 04:51:25,719 - INFO - Server send data "{"action": "Echo", "time": 1564876285.719395, "code": 404, "data": "Action not found"}"
+2019-08-04 04:53:55,258 - INFO - Client was started
+2019-08-04 04:54:01,920 - INFO - Client send data "Test"
+2019-08-04 04:54:01,928 - INFO - Server send data "{"action": "echo", "time": 1564876441.927269, "code": 200, "data": "Test"}"
+2019-08-04 04:55:36,215 - INFO - Client was started
+2019-08-04 04:55:45,312 - INFO - Client send data "Test"
+2019-08-04 04:55:45,319 - INFO - Server send data "{"action": "echo", "time": 1564876545.318526, "code": 200, "data": "Test"}"
