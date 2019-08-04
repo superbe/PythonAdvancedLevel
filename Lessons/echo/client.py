@@ -1,53 +1,38 @@
-import yaml
 import socket
 import json
 import logging
 import client_log_config
-from argparse import ArgumentParser
+import zlib
+from client_configuration import configuration, WRITE_MODE, READ_MODE
 from datetime import datetime
 
 
-def main():
-    parser = ArgumentParser()
-
-    parser.add_argument('-c', '--config', type=str, required=False, help='Sets config file path')
-
-    args = parser.parse_args()
-
-    config = {
-        'host': 'localhost',
-        'port': 8000,
-        'buffersize': 1024
+def make_request(action_name, data):
+    return {
+        'action': action_name,
+        'time': datetime.now().timestamp(),
+        'data': data
     }
 
-    if args.config:
-        with open(args.config) as file:
-            file_config = yaml.load(file, Loader=yaml.Loader)
-            config.update(file_config)
 
-    host, port = config.get('host'), config.get('port')
-
+def main():
     try:
         logging.info('Client was started')
         sock = socket.socket()
-        sock.connect((host, port))
-
-        action = input('Enter action: ')
-        data = input('Enter data: ')
-
-        request = {
-            'action': action,
-            'time': datetime.now().timestamp(),
-            'data': data
-        }
-
-        str_request = json.dumps(request)
-
-        sock.send(str_request.encode())
-        logging.info(f'Client send data "{data}"')
-
-        b_response = sock.recv(config.get('buffersize')).decode();
-        logging.info(f'Server send data "{b_response}"')
+        sock.connect((configuration.host, configuration.port))
+        while True:
+            if configuration.mode == WRITE_MODE:
+                action = input('Enter action: ')
+                data = input('Enter data: ')
+                request = make_request(action, data)
+                str_request = json.dumps(request)
+                bytes_request = zlib.compress(str_request.encode())
+                sock.send(bytes_request)
+                # logging.info(f'\nClient send data "{data}"')
+            elif configuration.mode == READ_MODE:
+                response = sock.recv(configuration.bufferSize);
+                bytes_response = zlib.decompress(response)
+                logging.info(f'Server send data "{bytes_response.decode()}"')
     except KeyboardInterrupt:
         logging.critical('client shutdown.')
 
