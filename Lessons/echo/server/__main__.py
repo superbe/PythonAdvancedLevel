@@ -31,15 +31,22 @@ def main():
                 rlist, wlist, xlist = select.select(connections, connections, connections, 0)
 
                 for read_client in rlist:
-                    bytes_request = read_client.recv(configuration.bufferSize)
-                    requests.append(bytes_request)
+                    try:
+                        bytes_request = read_client.recv(configuration.bufferSize)
+                    except Exception:
+                        connections.remove(read_client)
+                    else:
+                        requests.append(bytes_request)
 
                 if requests:
                     bytes_request = requests.pop()
                     bytes_response = handle_default_request(bytes_request)
 
                     for write_client in wlist:
-                        write_client.send(bytes_response)
+                        try:
+                            write_client.send(bytes_response)
+                        except Exception:
+                            connections.remove(write_client)
 
     except KeyboardInterrupt:
         logging.critical('Server shutdown.')
