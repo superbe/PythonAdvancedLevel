@@ -11,6 +11,8 @@ from middlewares import compressiong_middleware, encryption_middleware
 def handle_default_request(bytes_request):
     request = json.loads(bytes_request.decode())
 
+    print(request)
+
     if validate_request(request):
         actions_name = request.get('action')
         controller = resolve(actions_name)

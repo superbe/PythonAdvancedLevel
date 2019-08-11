@@ -1,15 +1,19 @@
 import json
-from echo.base_protocol import BaseProtocol
+from echo.Common.base_protocol import BaseProtocol
 
 
-class ServerProtocol(BaseProtocol):
+class ClientProtocol(BaseProtocol):
     """
-    Класс серверной версии протокола JIM.
+    Класс клиентской версии протокола JIM.
     """
-    response = 200
-    alert = ''
-    error = ''
+    user = {'account_name': '', 'status': ''}
     type = ''
+    destination = ''
+    sender = ''
+    encoding = 'utf-8'
+    room = ''
+    name = ''
+    message = ''
 
     def validate(self):
         """
@@ -22,10 +26,12 @@ class ServerProtocol(BaseProtocol):
             raise ValueError('Введена неверная команда.', 'action')
         self.base_validate('action', self.action, str, 15)
         self.base_validate('time', self.time, float)
-        self.base_validate('response', self.response, int)
-        self.base_validate('alert', self.alert, str)
-        self.base_validate('error', self.error, str)
-        self.base_validate('type', self.type, str)
+        self.base_validate('to', self.destination, str)
+        self.base_validate('from', self.sender, str)
+        self.base_validate('encoding', self.encoding, str)
+        self.base_validate('room', self.room, str)
+        self.base_validate('name', self.name, str, 25)
+        self.base_validate('message', self.message, str, 500)
 
     def __str__(self):
         """
@@ -36,10 +42,13 @@ class ServerProtocol(BaseProtocol):
         result = json.dumps({
             'action': self.action,
             'time': self.time,
-            'response': self.response,
-            'type': self.type,
-            'alert': self.alert,
-            'error': self.error
+            'user': self.user,
+            'to': self.destination,
+            'from': self.sender,
+            'encoding': self.encoding,
+            'room': self.room,
+            'name': self.name,
+            'message': self.message
         })
 
         if len(result) > 640:
@@ -56,7 +65,10 @@ class ServerProtocol(BaseProtocol):
         result = json.loads(value)
         self.action = result['action']
         self.time = result['time']
-        self.response = result['response']
-        self.type = result['type']
-        self.alert = result['alert']
-        self.error = result['error']
+        self.user = result['user']
+        self.destination = result['to']
+        self.sender = result['from']
+        self.encoding = result['encoding']
+        self.room = result['room']
+        self.name = result['name']
+        self.message = result['message']

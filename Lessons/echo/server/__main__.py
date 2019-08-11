@@ -41,6 +41,9 @@ def main():
                 client, address = sock.accept()
                 logging.info(f'Client was detected {address[0]}:{address[1]}')
                 connections.append(client)
+
+                print(client)
+
             except:
                 pass
 

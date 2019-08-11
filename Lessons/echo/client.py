@@ -15,11 +15,13 @@ def read(sock, buffersize):
         logging.info(f'Server send data "{bytes_response.decode()}"')
 
 
-def make_request(action_name, data):
+def make_request(action_name, data, login, destination):
     return {
         'action': action_name,
         'time': datetime.now().timestamp(),
-        'data': data
+        'data': data,
+        'user': login,
+        'destination': destination
     }
 
 
@@ -29,15 +31,20 @@ def main():
         sock = socket.socket()
         sock.connect((configuration.host, configuration.port))
 
+        # Вводим имя пользователя (проработать до уатентификации и авторизации).
+        # Под этим логином пользователь будет идентифицирован в сети и по этому
+        # логину будут ему приходить сообщения.
+        login = input('Enter login: ')
+
         read_thread = threading.Thread(
             target=read, args=(sock, configuration.bufferSize)
         )
         read_thread.start()
 
         while True:
-            action = input('Enter action: ')
+            destination = input('Enter destination login to: ')
             data = input('Enter data: ')
-            request = make_request(action, data)
+            request = make_request('echo', data, login, destination)
             str_request = json.dumps(request)
             bytes_request = zlib.compress(str_request.encode())
             sock.send(bytes_request)
