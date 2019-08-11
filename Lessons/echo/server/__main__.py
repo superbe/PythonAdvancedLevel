@@ -2,8 +2,25 @@ import socket
 import logging
 import select
 import server_log_config
+import threading
 from handlers import handle_default_request
 from server_configuration import configuration
+
+
+def read(sock, connections, requests, buffersize):
+    try:
+        bytes_request = sock.recv(buffersize)
+    except Exception:
+        connections.remove(sock)
+    else:
+        requests.append(bytes_request)
+
+
+def write(sock, connections, response):
+    try:
+        sock.send(response)
+    except Exception:
+        connections.remove(sock)
 
 
 def main():
@@ -31,22 +48,20 @@ def main():
                 rlist, wlist, xlist = select.select(connections, connections, connections, 0)
 
                 for read_client in rlist:
-                    try:
-                        bytes_request = read_client.recv(configuration.bufferSize)
-                    except Exception:
-                        connections.remove(read_client)
-                    else:
-                        requests.append(bytes_request)
+                    read_thread = threading.Thread(
+                        target=read, args=(read_client, connections, requests, configuration.bufferSize)
+                    )
+                    read_thread.start()
 
                 if requests:
                     bytes_request = requests.pop()
                     bytes_response = handle_default_request(bytes_request)
 
                     for write_client in wlist:
-                        try:
-                            write_client.send(bytes_response)
-                        except Exception:
-                            connections.remove(write_client)
+                        write_thread = threading.Thread(
+                            target=write, args=(write_client, connections, bytes_response)
+                        )
+                        write_thread.start()
 
     except KeyboardInterrupt:
         logging.critical('Server shutdown.')
